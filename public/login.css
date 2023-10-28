@@ -1,0 +1,189 @@
+main {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main #loginform {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+fieldset {
+    position: relative;
+    right: 500px;
+    border-color: palevioletred;
+    border-radius: 5%;
+}
+
+#wrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#main111 {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#banner {
+    wh
+}
+
+main #loginform fieldset ul {}
+
+main #loginform fieldset ul li {
+    border: 1px solid #ccc;
+    background: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.d2 {
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 70px;
+
+}
+
+main #loginform fieldset ul li {}
+
+main #loginform fieldset ul li span {}
+
+main #loginform fieldset ul li .id_bg {
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    width: 10px;
+    background-color: #eee;
+    position: relative;
+}
+
+main #loginform fieldset ul li .id_bg::after {
+    content: '';
+    display: block;
+    background-position: 0 0;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+}
+
+main #loginform fieldset ul li .pw_bg {
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    width: 10px;
+    background-color: #eee;
+    position: relative;
+}
+
+main #loginform fieldset ul li .pw_bg::after {
+    content: '';
+    display: block;
+    background-position: -21px 0;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+}
+
+main #loginform fieldset ul li span input {
+    width: 400px;
+    height: 40px;
+    border: 0;
+    padding-left: 5px;
+}
+
+main #loginform ul li span input::placeholder {
+    font-size: 0.95rem;
+
+
+    main #loginform fieldset ul #loginbutton {
+        float: left;
+    }
+
+    main #loginform fieldset ul li span input[type=text] {}
+
+    main #loginform fieldset ul li span input[type=password] {}
+
+    main #loginform fieldset ul li .pw_showhide {
+
+        background-image: url(../images/icon.svg);
+        background-position: -105px 0;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: 11px;
+        top: 8px;
+    }
+
+    main #loginform .btm {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 15px 0;
+        justify-content: space-between;
+    }
+
+    main #loginform fieldset .btm p {}
+
+    main #loginform fieldset .btm p label {
+        display: flex;
+        align-items: center;
+    }
+
+    main #loginform fieldset .btm p label input[name=login_y] {
+        appearance: none;
+    }
+
+    main #loginform fieldset .btm p label input[name=login_y]+span::before {
+        background-color: #fff;
+        appearance: none;
+        border: 1px solid #ccc;
+        content: '';
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+
+        background-position: -65px -22px;
+    }
+
+    main #loginform fieldset .btm p label input[name=login_y]:checked+span::before {
+        background-position: -84px -21px;
+    }
+
+    main #loginform fieldset .btm p label span {}
+
+    main #loginform fieldset .btm .idpw_search {}
+
+    main #loginform fieldset .btm .idpw_search::after {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background-image: url(../images/icon.svg);
+        background-position: -104px -21px;
+        margin-left: 5px;
+    }
+
+    main #loginform fieldset #login_btn {
+
+        width: 100%;
+        color: palevioletred;
+        padding: 20px 0;
+        box-shadow: 0 2px 0 #3d4247;
+    }
+
+    main .join_link {
+        border: 1px solid #aaa;
+        color: #0074e9;
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0 2px 0 #c0ccd7;
+    }

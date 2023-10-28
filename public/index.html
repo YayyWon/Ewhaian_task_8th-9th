@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="stylesheet" href="\login.css">
+
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="toplink-bg"></div>
+
+  <main>
+    <form action="#" method="post" id="loginform">
+      <fieldset style="text-align: left;">
+        <legend class="skip"></legend>
+        <div id="wrap">
+          <div class="d1">
+            <ul>
+              <li>
+                <input type="text" name="user_id" placeholder>
+                <label>
+                  <input type="checkbox" name="login_y" id="iogin_y">
+                </label>
+              </li>
+              <li>
+                <input type="password" name="user_pw" placeholder>
+                <label>
+                  <input type="checkbox" name="login_y" id="iogin_y">
+                </label>
+            </ul>
+          </div>
+          <div class='d2'>
+            <button type="submit" id="login_btn">Log-In</button>
+          </div>
+
+        </div>
+        <div class="btm">
+          <button href="#" class="idpw_search">회원가입</button>
+          <button href="#" class="idpw_search">아이디/비밀번호 찾기</button>
+        </div>
+      </fieldset>
+    </form>
+    <img src="/notice.png" style="position: relative;left:100px">
+  </main>
+  <div id="main111">
+    <div style="position: relative; left:500px;">
+      <img src="/dain201115.jpg">
+      <img src="hwa201215...jpg">
+    </div>
+    <div id="banner" style="position:relative;left: 550px;">
+      <div><img src="main_certify.png"></div>
+      <div><img src="facebook.jpg"></div>
+      <div><img src="ewha_insta.jpg"></div>
+      <div><img src="blog_btn.jpg"></div>
+      <div><img src="gibu.jpg"></div>
+    </div>
+  </div>
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
