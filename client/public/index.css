@@ -1,0 +1,444 @@
+* {
+    box-sizing: border-box;
+    cursor: url(./mouse.svg), auto;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+html {
+    cursor: url(./mouse.svg), auto;
+}
+
+body {
+    cursor: url(./mouse.svg), auto;
+    width: 100%;
+    font-size: 62.5%;
+    /* height: 5000px; */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    font-family: 'Amatic SC', cursive;
+    color: #404040
+}
+
+p {
+    margin: 0;
+}
+
+nav {
+    width: 515px;
+    height: 50px;
+    background-color: black;
+    opacity: 60%;
+    margin-left: 900px;
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    border-radius: 0px 0 16px 16px;
+    z-index: 500;
+}
+
+nav span {
+    color: white;
+    font-size: 14.5px;
+    font-family: sans;
+    z-index: 600;
+    cursor: pointer;
+}
+
+span:hover {
+    text-decoration: underline;
+}
+
+.main-page {
+    width: 100%;
+    height: 800px;
+    background-color: steelblue;
+    /* background: url('https://images.unsplash.com/photo-1597571063304-81f081944ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80'); */
+    /* background: url('https://images.unsplash.com/photo-1546977463-943d58b78c19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&q=80'); */
+    background: url('https://images.unsplash.com/photo-1548268770-66184a21657e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    /* background: url('https://images.unsplash.com/photo-1516690553959-71a414d6b9b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'); */
+    /* background: url('https://postfiles.pstatic.net/MjAyMDA4MjNfMjQ5/MDAxNTk4MTYwMTk3MzUy.vAYfmTUtF40GQm2JZYa3-NvqEJWRV_2fnqwX3eIQNmgg.-ZQM8uH9WTu4123e10QOJyehd140J9_wVhLYMq5kw6Yg.JPEG.sknglee22/photo-1496450681664-3df85efbd29f.jpeg?type=w773'); */
+    /* background: url('https://postfiles.pstatic.net/MjAyMDA4MjNfNTQg/MDAxNTk4MTYwMTk3MzE3.RIEYIth8Hwbk6NCCZnpIZ0uIz551XIx1JfPs0uGskDYg.Mhl14iuW-TvLKXxZL3oeDjVASPsAi4dh4hFxWrWXzWIg.JPEG.sknglee22/photo-1490735891913-40897cdaafd1.jpeg?type=w773'); */
+    /* background-position: center; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p.typing-text {
+    display: none;
+}
+
+.typing {
+    /*       position: absolute;*/
+    display: inline-block;
+    animation-name: cursor;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+@keyframes cursor {
+    0% {
+        border-right: 1.5px solid #fff;
+    }
+
+    50% {
+        border-right: 1.5px solid transparent;
+    }
+
+    100% {
+        border-right: 1.5px solid #fff;
+    }
+}
+
+.icon-box {
+    width: 55%;
+    height: 430px;
+    padding: 50px 130px;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .4);
+}
+
+.icon-box-top {
+    width: 55%;
+    height: 37px;
+    background: linear-gradient(to right, lightgrey, #afafaf);
+    display: flex;
+    opacity: 90%;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.icon-top-button {
+    width: 15.5px;
+    height: 15.5px;
+    background-color: red;
+    margin-left: 10.5px;
+    border-radius: 50%;
+    border: 0.1px solid #c9c9c9;
+}
+
+.red {
+    background-color: #ff5349;
+}
+
+.gold {
+    background-color: #ffd149;
+}
+
+.green {
+    background-color: #67d84e;
+}
+
+.icon-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-item-box {
+    width: 100px;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, .3); */
+}
+
+.naver-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10.5px;
+    color: black;
+    position: relative;
+    top: 62px;
+    right: 87px;
+}
+
+.github-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10.5px;
+    color: black;
+    position: relative;
+    top: 61px;
+    right: 101px;
+}
+
+.github {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}
+
+.icon-name {
+    position: relative;
+    top: 60px;
+    font-size: 0.85rem;
+}
+
+.skills {
+    font-size: 8rem;
+}
+
+.one {
+    background: url('http://asq.kr/6tmeXWULysP9');
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* about 페이지 */
+
+.about-page,
+.skills-page,
+.works-page {
+    height: 815px;
+    padding: 50px 150px;
+    padding-bottom: 110px;
+}
+
+.about-title,
+.skills-title,
+.works-title {
+    margin-top: 30px;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.about-page {
+    background-color: white;
+}
+
+.about-icon-box {
+    width: 75%;
+    height: 160px;
+    text-align: center;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-icon-item {
+    display: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.about-icon-img {
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    opacity: 35%;
+}
+
+.growth {
+    margin-top: 10px;
+    width: 110px;
+    height: 95px;
+}
+
+.growth-content {
+    position: relative;
+    top: 20px;
+}
+
+.about-icon-img:hover {
+    opacity: 100%;
+}
+
+.about-icon-content {
+    font-size: 0.8rem;
+    margin: 3px;
+}
+
+.about-box {
+    position: relative;
+    top: 30px;
+    background-color: #f2f2f2;
+    padding: 50px 90px;
+    width: 99%;
+    height: 340px;
+    display: flex;
+}
+
+.about-img-box {
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.about-img {
+    background: url('https://postfiles.pstatic.net/MjAyMDA4MjNfMTc0/MDAxNTk4MTU3NjM1Mjg5.yttmi743xocFbrx78RzJaezS9rUTA-n1BetVZ1TwaNAg.SCJflh-oAq9X6aRsoDiZJFYpg-FZ56c5paTmImFizXgg.PNG.sknglee22/SE-1221f82a-7c71-4216-8e5a-7d679bcac9d2.png?type=w773');
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 3px;
+}
+
+.about-content-box {
+    width: 700px;
+    padding: 40px 50px;
+    margin-left: 70px;
+    border-left: 1px solid lightgrey;
+}
+
+.about-content {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+}
+
+
+/* skills 페이지 */
+
+.skills-page {
+    background-color: #505050;
+}
+
+.skills-title {
+    color: white;
+}
+
+
+/* works 페이지 */
+
+.works-page {
+    background-color: white;
+    background: url('https://postfiles.pstatic.net/MjAyMDA4MjRfMzAg/MDAxNTk4MjQ4MzU4MDQ2.1qh48DCPfJ2cUZxUMd5jRo0SydbFnFty3wiBjirBJ28g.03jH_2eDH7CtBKNfV7qvrpoDwMxN2yphIDSULD7aBX8g.PNG.sknglee22/lightpaperfibers_2X.png?type=w773');
+}
+
+.icon-folder {
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 65px;
+    margin: 50px 25px;
+    border-radius: 2px;
+    background-color: gold;
+    background-image: linear-gradient(0deg, orange 0%, transparent 100%);
+    box-shadow: 0 -8px 0 -5px orange, 0 3px 6px rgba(0, 0, 0, .3);
+}
+
+.icon-folder:before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    width: 20px;
+    height: 8px;
+    border-radius: 2px;
+    background: gold;
+}
+
+.icon-folder:after {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 90px;
+    margin: -20px -15px -35px;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 75%;
+    line-height: 25px;
+    text-align: center;
+}
+
+
+/* .main-page {
+    cursor: url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer.png), auto;
+    cursor: -webkit-image-set(url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer.png) 1x, url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer@2x.png) 2x), auto;
+}
+
+* a:hover,
+* a:hover * {
+    cursor: url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer-hover.png), auto;
+    cursor: -webkit-image-set(url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer-hover.png) 1x, url(http://circulardev.com/nike/cortez/dist/images/cortez-pointer-hover@2x.png) 2x), auto;
+}
+
+#wrap a {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 20px 50px;
+} */
+
+.skills-page {
+    background-color: #505050;
+    height: 950px;
+    padding: 50px 150px;
+    padding-bottom: 110px;
+    text-align: center;
+}
+
+.skills-title {
+    color: white;
+    margin-top: 30px;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.language-title {
+    color: white;
+    font-size: 0.75rem;
+    margin: 10px;
+    margin-top: 15px;
+    position: relative;
+    top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+}
+
+.language-box {
+    /* background-color: gold; */
+    display: flex;
+    justify-content: center;
+}
+
+.language-item {
+    border-radius: 7px;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    margin: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .4);
+}
+
+.language-item>img {
+    border-radius: 7px;
+    width: 65px;
+    height: 63px;
+}

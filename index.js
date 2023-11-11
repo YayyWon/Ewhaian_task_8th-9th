@@ -1,48 +1,52 @@
-const express = require('express');
-const app = express();
-const port = 5000;
+const express = require('express')
+const app = express()
+const port = 5000
 const bodyParser = require('body-parser');
+const config = require('./config/key')
 const cookieParser = require('cookie-parser')
-const { User } = require('./server/models/User');
-const { auth } = require('.server/middleware/auth')
-const config = require('./server/config/key');
+const { User } = require('./models/User')
+const { auth } = require('./middleware/auth')
 
 //*bodyparser 옵션 설정*
 //application/x-www-form-urlencoded이걸 분석해줌
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }))
 //application/json을 분석해줌
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(cookieParser());
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+}).then(() => console.log('MongoDB Connected!')) //연결이 잘 됐는지 확인
+    .catch(err => console.log(err))
+
+app.get('/', (req, res) => res.send('Hello World! 아아아 치과가기 귀차나'))
+
+app.get('/api/hello', (req, res) => {
+    res.send('룰루랄라 루비랄라')
 })
-    .then(() => {
-        console.log('MongoDB Connected..');
-        app.listen(port, () => {
-            console.log(`Example app listening on port ${port}`);
-        });
-    })
-    .catch((error) => console.log(error));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!~~안녕하세요~');
-});
 
-app.post('/api/users/register', async (req, res) => {
-    // 회원 가입할 때 필요한 정보들을 client에서 가져오면
-    // 그것들을 데이터베이스에 넣어준다.
+app.post('/api/users/register', (req, res) => {
+    //회원 가입할때 필요한 정보들을 client에서 가져오면
+    //그것들을 데이터베이스에 넣어준다.
+
+    //유저모델 인스턴스 생성
     const user = new User(req.body);
+    console.log(user)
+    //req.body안에는 json형식으로 id, password등이 들어있음.
+    //이는 앞의 bodyParser덕분
+    user.save((err, userInfo) => {
+        if (err) return res.json({ success: false, err }) //성공하지 못하면 제이슨형식으로 알려줌
+        return res.status(200).json({ //성공시
+            success: true
+        })
+    })
+})
 
-    try {
-        const userInfo = await user.save();
-        res.status(200).json({ success: true });
-    } catch (err) {
-        res.status(500).json({ success: false, err });
-    }
-});
 
 app.post('/api/users/login', (req, res) => {
     //요청된 email가 데이터베이스에 있는지 찾는다. 
@@ -106,6 +110,7 @@ app.get('/api/users/logout', auth, (req, res) => {
             })
         })
 })
+
 
 
 

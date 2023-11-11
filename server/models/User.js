@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const saltRound = 10;
+const saltRounds = 10;
 const jwt = require('jsonwebtoken');
+
+
 
 const userSchema = mongoose.Schema({
     name: {
@@ -10,14 +12,14 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        trim: true,
-        unique: 1
+        trim: true, //빈칸 제거
+        unique: 1 //중복 없음
     },
     password: {
         type: String,
         minlength: 5
     },
-    role: {
+    role: { //일반유저, 관리자 유저
         type: Number,
         default: 0
     },
@@ -25,7 +27,7 @@ const userSchema = mongoose.Schema({
     token: {
         type: String
     },
-    tokenExp: {
+    tokenExp: { //토큰 유효기간
         type: Number
     }
 })
@@ -53,6 +55,20 @@ userSchema.pre('save', function (next) {
     }
 })
 
+
+//comparePassword 메소드 생성
+userSchema.methods.comparePassword = function (plainPassword, callback) {
+    //plainPassword 1234567
+    //암호화를 한 뒤에 데이터베이스에 있는 암호화된 비밀번호와 같은지 비교해야함
+    //때문에 bcrypt를 사용할 것
+    bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+        if (err) return callback(err);
+        //에러가 없는경우. isMatch = true.
+        callback(null, isMatch);
+
+    })
+}
+
 userSchema.methods.generateToken = function (callback) {
     var user = this;
     console.log(user);
@@ -71,6 +87,7 @@ userSchema.methods.generateToken = function (callback) {
     })
 }
 
+
 userSchema.statics.findByToken = function (token, callback) {
     var user = this;
 
@@ -88,6 +105,10 @@ userSchema.statics.findByToken = function (token, callback) {
 }
 
 
-const User = mongoose.model('User', userSchema)
 
-module.exports = { User }
+
+
+//스키마를 이용해서 모델 생성
+const User = mongoose.model('User', userSchema);
+
+module.exports = { User };
